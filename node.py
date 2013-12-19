@@ -139,9 +139,9 @@ def ser_uint256_vector(l):
 	r = ""
 	if len(l) < 253:
 		r = chr(len(l))
-	elif len(s) < 0x10000:
+	elif len(l) < 0x10000:
 		r = chr(253) + struct.pack("<H", len(l))
-	elif len(s) < 0x100000000L:
+	elif len(l) < 0x100000000L:
 		r = chr(254) + struct.pack("<I", len(l))
 	else:
 		r = chr(255) + struct.pack("<Q", len(l))
@@ -167,9 +167,9 @@ def ser_string_vector(l):
 	r = ""
 	if len(l) < 253:
 		r = chr(len(l))
-	elif len(s) < 0x10000:
+	elif len(l) < 0x10000:
 		r = chr(253) + struct.pack("<H", len(l))
-	elif len(s) < 0x100000000L:
+	elif len(l) < 0x100000000L:
 		r = chr(254) + struct.pack("<I", len(l))
 	else:
 		r = chr(255) + struct.pack("<Q", len(l))
@@ -195,9 +195,9 @@ def ser_int_vector(l):
 	r = ""
 	if len(l) < 253:
 		r = chr(len(l))
-	elif len(s) < 0x10000:
+	elif len(l) < 0x10000:
 		r = chr(253) + struct.pack("<H", len(l))
-	elif len(s) < 0x100000000L:
+	elif len(l) < 0x100000000L:
 		r = chr(254) + struct.pack("<I", len(l))
 	else:
 		r = chr(255) + struct.pack("<Q", len(l))
